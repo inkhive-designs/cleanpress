@@ -1,0 +1,74 @@
+/* Second Featured Area */
+.featposts {
+  @media screen and (max-width: 767px) { margin-top: 15px;}
+  padding: 0;
+  .item {
+    padding: 0px;
+    position: relative;
+    margin-bottom: 0;
+    overflow: hidden;
+    .item-container {
+      overflow: visible;
+      .transition(0.8s all ease);
+      @media screen and (max-width: 767px){
+        transform: none;
+      }
+      img {
+        width: 100%;
+        .transition(1s all ease);
+        position: relative;
+        z-index: 33;
+      }
+
+      .post-title-parent {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        .post-title {
+          background: @background;
+          color: @content;
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 10px 30px;
+          font-size: 16px;
+          .transition(0.4s all ease);
+          @media screen and (max-width: 767px){
+            opacity: 1;
+            transform: none;
+          }
+          @media screen and (max-width: 767px) { padding-bottom: 15px;}
+        }
+      }
+      &:hover {
+        img {
+          transition: 0.5s all ease;
+          transform: translateY(-50px);
+        }
+      }
+    }
+
+    @media screen and (min-width: 767px){
+      &:hover {
+        .item-container {
+          img {
+            filter: brightness(0.9);
+            -webkit-filter: brightness(0.9);
+            transform: translateY(50);
+            @media screen and (max-width: 767px){
+              transform: none;
+              -webkit-filter: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* sb slider */
+.latest-hap {
+  position: relative;
+}

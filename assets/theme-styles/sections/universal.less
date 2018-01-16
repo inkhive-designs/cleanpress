@@ -1,0 +1,75 @@
+/* section titles */
+.body-font {
+  font-family: "Open Sans", Arial,Helvetica,sans-serif;
+}
+.title-font {
+  font-family: "Open Sans", Arial,Helvetica,sans-serif
+}
+
+body {
+  .body-font;
+  background: #f7f7f7;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.mega-container {
+  background: white;
+  max-width: 1170px;
+  margin: auto;
+  margin-top: 20px;
+  overflow: visible;
+}
+a {
+  color: @accent;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    color: @accent;
+  }
+}
+.container {
+  margin: auto;
+  max-width: 1100px;
+}
+.section-title {
+  color: darken(@content,13%);
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 3;
+  .title-font;
+  @media screen and (max-width: 991px) {
+    margin-top: 20px;
+  }
+  span {
+    background: @background;
+    position: relative;
+    padding: 5px 8px;
+    padding-right: 15px;
+    z-index: 1;
+    display: inline-block;
+  }
+}
+#content {
+  margin-top: 70px;
+  padding-top: 30px;
+}
+#main {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+}
+#primary .section-title span {
+  padding-left: 0;
+}
+.layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: fade(black,60%);
+}

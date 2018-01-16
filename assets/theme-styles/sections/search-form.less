@@ -1,0 +1,47 @@
+/*Header-top
+------------------------------------------------------- */
+#top-bar {
+  background: darken(@top-bar, 10%);
+  display: block;
+  overflow: hidden;
+  border-bottom: solid 1px lighten(@top-bar,10%);
+  padding-top: 8px;
+  #top-search-form {
+    overflow: hidden;
+    padding: 30px 5px;
+    text-align: center;
+    display: none;
+    input {
+      background: lighten(@top-bar,10%);
+      border:solid 2px saturate(@top-bar,12%);
+      max-width: 90%;
+      width: 750px;
+      outline: none;
+      color: #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    ::-webkit-input-placeholder {
+      color: lighten(@top-bar,30%);
+    }
+    .cancel-search {
+      color: #ccc;
+      font-family: Arial,sans-serif;
+      font-style: italic;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  .top-menu {
+    padding: 0;
+  }
+}
+.top-search-icon {
+  color: grey;
+  text-align: right;
+  font-size: 18px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
