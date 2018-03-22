@@ -2,6 +2,7 @@
 #site-navigation {
   display: block;
   clear: both;
+  float: none;
   border-bottom: solid 1px darken(@background, 6%);
   background: @background;
   @media screen and (max-width: 768px) {
@@ -135,6 +136,9 @@
 #top-navigation {
   background: darken(@top-bar, 10%);
   color: @content;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
   ul {
     margin: 0;
     li {
@@ -162,6 +166,7 @@
 }
 #menu {
   z-index: 999;
+  overflow-y: auto;
   background: darken(@top-bar, 5%);
   border-right: 2px solid @accent;
   @media screen and (min-width: 768px) {

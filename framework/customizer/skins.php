@@ -1,17 +1,9 @@
 <?php
 //Logo Settings
 function cleanpress_customize_register_skins( $wp_customize ) {
-$wp_customize->add_section( 'title_tagline' , array(
-    'title'      => __( 'Title, Tagline & Logo', 'cleanpress' ),
-    'priority'   => 30,
-) );
-    function cleanpress_logo_enabled($control) {
-    $option = $control->manager->get_setting('custom_logo');
-    return $option->value() == true;
-}
-
 //Replace Header Text Color with, separate colors for Title and Description
 $wp_customize->get_control('header_textcolor')->label = __('Site Title Color','cleanpress');
+$wp_customize->get_setting('header_textcolor')->default = '00b300';
 $wp_customize->add_setting('cleanpress_header_desccolor', array(
     'default'     => '#FFF',
     'sanitize_callback' => 'sanitize_hex_color',

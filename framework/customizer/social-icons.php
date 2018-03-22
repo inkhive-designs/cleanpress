@@ -4,6 +4,7 @@ function cleanpress_customize_register_social( $wp_customize ) {
 $wp_customize->add_section('cleanpress_social_section', array(
     'title' => __('Social Icons','cleanpress'),
     'priority' => 44 ,
+    'panel' => 'cleanpress_header_panel'
 ));
 
 $social_networks = array( //Redefinied in Sanitization Function.

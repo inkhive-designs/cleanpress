@@ -25,7 +25,7 @@ $wp_customize->add_section(
             array(
                 'settings'		=> 'cleanpress_featposts_enable',
                 'section'		=> 'cleanpress_featposts',
-                'label'    => __( 'Enable Feature Posts.','cleanpress' ),
+                'label'    => __( 'Enable/Disable Feature Posts.','cleanpress' ),
                 'enable_disable' 	=> array(
                     'enable' => __( 'Enabled', 'cleanpress' ),
                     'disable' => __( 'Disabled', 'cleanpress' )

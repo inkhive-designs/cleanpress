@@ -101,7 +101,7 @@ $wp_customize->add_control(
             array(
                 'settings'		=> 'cleanpress_disable_sidebar',
                 'section'		=> 'cleanpress_sidebar_options',
-                'label'    => __( 'Disable Sidebar Everywhere.','cleanpress' ),
+                'label'    => __( 'Enable/Disable Sidebar Everywhere.','cleanpress' ),
                 'enable_disable' 	=> array(
                     'enable' => __( 'Enabled', 'cleanpress' ),
                     'disable' => __( 'Disabled', 'cleanpress' )
@@ -125,7 +125,7 @@ $wp_customize->add_control(
             array(
                 'settings'		=> 'cleanpress_disable_sidebar_home',
                 'section'		=> 'cleanpress_sidebar_options',
-                'label'    => __( 'Disable Sidebar on Home/Blog.','cleanpress' ),
+                'label'    => __( 'Enable/Disable Sidebar on Home/Blog.','cleanpress' ),
                 'enable_disable' 	=> array(
                     'enable' => __( 'Enabled', 'cleanpress' ),
                     'disable' => __( 'Disabled', 'cleanpress' )
@@ -150,7 +150,7 @@ $wp_customize->add_control(
             array(
                 'settings'		=> 'cleanpress_disable_sidebar_front',
                 'section'		=> 'cleanpress_sidebar_options',
-                'label'    => __( 'Disable Sidebar on Front Page.','cleanpress' ),
+                'label'    => __( 'Enable/Disable Sidebar on Front Page.','cleanpress' ),
                 'enable_disable' 	=> array(
                     'enable' => __( 'Enabled', 'cleanpress' ),
                     'disable' => __( 'Disabled', 'cleanpress' )

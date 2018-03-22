@@ -14,7 +14,6 @@ function cleanpress_customize_register( $wp_customize ) {
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
     $wp_customize->remove_control('header_image');
-
 }
 add_action( 'customize_register', 'cleanpress_customize_register' );
 //Load All Individual Settings Based on Sections/Panels.
@@ -23,6 +22,7 @@ add_action( 'customize_register', 'cleanpress_customize_register' );
     require_once get_template_directory().'/framework/customizer/_featured-posts.php';
     require_once get_template_directory().'/framework/customizer/_layouts.php';
     require_once get_template_directory().'/framework/customizer/_sanitization.php';
+    require_once get_template_directory().'/framework/customizer/header.php';
     require_once get_template_directory().'/framework/customizer/skins.php';
     require_once get_template_directory().'/framework/customizer/social-icons.php';
     require_once get_template_directory().'/framework/customizer/misc-scripts.php';

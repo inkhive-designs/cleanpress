@@ -19,16 +19,16 @@
   .site-branding {
     padding: 25px 0;
     overflow: hidden;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
       text-align: center;
       float: none;
       padding-bottom: 5px;
+      width: 100%;
     }
   }
   h1.site-title {
     font-size: 30px;
     margin-top: 0px;
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     a {
       color: @s-accent;
       &:hover {
@@ -48,15 +48,16 @@
     padding-top: 6px;
     padding-bottom: 4px;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     text-align: center;
   }
   #site-logo {
     display: inline-block;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 110px;
+    height: auto;
     text-align: center;
-    float: none;
+    float: left;
+    margin-right: 10px;
     @media screen and (max-width: 768px) {
       float: none;
     }
