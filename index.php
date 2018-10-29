@@ -17,14 +17,12 @@ get_header(); ?>
 		<?php if ( is_home() ) : ?>
 			<div class="section-title"><span><?php esc_html_e("From the Blog","cleanpress"); ?></span></div> <?php
 		endif; ?>
-		
+
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 */

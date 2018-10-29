@@ -9,29 +9,61 @@ jQuery(document).ready( function() {
         },
         function(){
             jQuery("#top-search-form").slideUp('fast');
-        });
-});
+        }
+    );
 
     //Mobile Menu
+    jQuery('.panel_hide_button').hide();
     jQuery('.menu-link').bigSlide({
         menu: '#menu',
-        easyClose: true
+        easyClose: true,
+		menuWidth: '20em',
+        side: 'right',
+        beforeOpen: function() {jQuery('.panel_hide_button').fadeIn()},
+        beforeClose: function() {jQuery('.panel_hide_button').fadeOut()},
     });
+
+    var parentElement = jQuery('.panel li.menu-item-has-children'),
+        dropdown	=	jQuery('.panel li.menu-item-has-children span');
+
+    parentElement.children('ul').hide();
+    dropdown.on('click', function(e) {
+        jQuery(this).siblings('ul').slideToggle().toggleClass('expanded');
+        e.stopPropagation();
+    });
+});
+
+
+
 
 jQuery(window).load(function() {
-        jQuery('#nivoSlider').nivoSlider({
-	        prevText: "<i class='fa fa-chevron-circle-left'></i>",
-	        nextText: "<i class='fa fa-chevron-circle-right'></i>",
-        });
-
-        //sticky sidebar
-        jQuery('.sticky-sidebar').scrollToFixed({
-            marginTop: 30,
-            limit: jQuery('#primary').offset().top + jQuery('#primary').height() - jQuery('.sticky-sidebar').height(),
-        });
-
+    jQuery('#nivoSlider').nivoSlider({
+        prevText: "<i class='fa fa-chevron-circle-left'></i>",
+        nextText: "<i class='fa fa-chevron-circle-right'></i>",
     });
-    
+
+    //sticky sidebar
+    jQuery('.sticky-sidebar').scrollToFixed({
+        marginTop: 30,
+        limit: jQuery('#primary').offset().top + jQuery('#primary').height() - jQuery('.sticky-sidebar').height(),
+    });
+
+});
+
+//Sticky Menu
+window.onscroll = function() { scrollStickyTop() };
+
+var topbar = document.getElementById("topbar");
+var sticked = topbar.offsetTop + 20;
+
+function scrollStickyTop() {
+	if ( window.pageYOffset > sticked ) {
+		topbar.classList.add("sticked");
+	} else {
+		topbar.classList.remove("sticked");
+	}
+}
+
 (function(jQuery) {
 	jQuery(document).ready(function() {
 		

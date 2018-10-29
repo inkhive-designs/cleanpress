@@ -1,61 +1,69 @@
 <?php
 //Google Fonts
 function cleanpress_customize_register_fonts( $wp_customize ) {
+    //Moving Colors Section In Design Panel
     $wp_customize->get_section('colors')->panel = 'cleanpress_design_panel';
+
+    //Moving Background Image Section In Design Panel
     $wp_customize->get_section('background_image')->panel = 'cleanpress_design_panel';
-$wp_customize->add_section(
-    'cleanpress_typo_options',
-    array(
-        'title'     => __('Google Web Fonts','cleanpress'),
-        'priority'  => 41,
-        'panel'     => 'cleanpress_design_panel'
-    )
-);
 
-$font_array = array('HIND','Khula','Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo','Lora','Source Sans Pro','Arimo','Bitter','Noto Sans');
-$fonts = array_combine($font_array, $font_array);
+    //Typography Section
+    $wp_customize->add_section(
+        'cleanpress_typo_options',
+        array(
+            'title'     => __('Google Web Fonts','cleanpress'),
+            'priority'  => 41,
+            'panel'     => 'cleanpress_design_panel'
+        )
+    );
 
-$wp_customize->add_setting(
-    'cleanpress_title_font',
-    array(
-        'default'=> 'Open Sans',
-        'sanitize_callback' => 'cleanpress_sanitize_gfont'
-    )
-);
+    $font_array = array('HIND','Khula','Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo','Lora','Source Sans Pro','Arimo','Bitter','Noto Sans');
+    $fonts = array_combine($font_array, $font_array);
 
-function cleanpress_sanitize_gfont( $input ) {
-    if ( in_array($input, array('HIND','Khula','Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo','Lora','Source Sans Pro','Arimo','Bitter','Noto Sans') ) )
-        return $input;
-    else
-        return '';
-}
+    $wp_customize->add_setting(
+        'cleanpress_title_font',
+        array(
+            'default'=> 'Open Sans',
+            'sanitize_callback' => 'cleanpress_sanitize_gfont'
+        )
+    );
 
-$wp_customize->add_control(
-    'cleanpress_title_font',array(
-        'label' => __('Title','cleanpress'),
-        'settings' => 'cleanpress_title_font',
-        'section'  => 'cleanpress_typo_options',
-        'type' => 'select',
-        'choices' => $fonts,
-    )
-);
+    function cleanpress_sanitize_gfont( $input ) {
+        if ( in_array($input, array('HIND','Khula','Open Sans','Droid Sans','Droid Serif','Roboto','Roboto Condensed','Lato','Bree Serif','Oswald','Slabo','Lora','Source Sans Pro','Arimo','Bitter','Noto Sans') ) )
+            return $input;
+        else
+            return '';
+    }
 
-$wp_customize->add_setting(
-    'cleanpress_body_font',
-    array(	'default'=> 'Open Sans',
-        'sanitize_callback' => 'cleanpress_sanitize_gfont' )
-);
+    $wp_customize->add_control(
+        'cleanpress_title_font',
+        array(
+            'label' => __('Title','cleanpress'),
+            'settings' => 'cleanpress_title_font',
+            'section'  => 'cleanpress_typo_options',
+            'type' => 'select',
+            'choices' => $fonts,
+        )
+    );
 
-$wp_customize->add_control(
-    'cleanpress_body_font',array(
-        'label' => __('Body','cleanpress'),
-        'settings' => 'cleanpress_body_font',
-        'section'  => 'cleanpress_typo_options',
-        'type' => 'select',
-        'choices' => $fonts
-    )
-);
-    //font size
+    $wp_customize->add_setting(
+        'cleanpress_body_font',
+        array(	'default'=> 'Open Sans',
+            'sanitize_callback' => 'cleanpress_sanitize_gfont' )
+    );
+
+    $wp_customize->add_control(
+        'cleanpress_body_font',
+        array(
+            'label' => __('Body','cleanpress'),
+            'settings' => 'cleanpress_body_font',
+            'section'  => 'cleanpress_typo_options',
+            'type' => 'select',
+            'choices' => $fonts
+        )
+    );
+
+    //Font Size
     $font_size = array(
         '14px' => 'Default',
         'initial' => 'Initial',
@@ -67,7 +75,8 @@ $wp_customize->add_control(
     );
 
     $wp_customize->add_setting(
-        'cleanpress_content_font_size', array(
+        'cleanpress_content_font_size',
+        array(
             'default' => '14px',
             'sanitize_callback' => 'cleanpress_sanitize_fontsize'
         )
@@ -80,10 +89,9 @@ $wp_customize->add_control(
             return '';
     }
 
-
-
     $wp_customize->add_control(
-        'cleanpress_content_font_size', array(
+        'cleanpress_content_font_size',
+        array(
             'settings' => 'cleanpress_content_font_size',
             'label' => __( 'Content Font Size','cleanpress' ),
             'description' => __('Select Font Size. This is only for the content on Static Page area. Not for Blog Posts, Pages or Archives.', 'cleanpress'),
@@ -109,7 +117,8 @@ $wp_customize->add_control(
     }
 
     $wp_customize->add_control(
-        'cleanpress_content_page_post_fontsize_set', array(
+        'cleanpress_content_page_post_fontsize_set',
+        array(
             'settings' => 'cleanpress_content_page_post_fontsize_set',
             'label'    => __( 'Page/Post Font Size','cleanpress' ),
             'description' => __('Choose your font size. This is only for Posts and Pages. It wont affect your blog page.','cleanpress'),

@@ -1,10 +1,31 @@
 /* ---------- Header ------------- */
 
 #masthead {
+  margin-bottom: 50px;
   position: relative;
-  z-index: 90;
+  z-index: 9999;
+  min-height: 600px;
   background: @top-bar;
   clear: both;
+  #topbar {
+    overflow: hidden;
+    position: relative;
+    padding: 25px 0;
+    transition: 0.3s all ease;
+    z-index: 999;
+  }
+  #topbar.sticked {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 999 !important;
+    background-color: #333;
+    padding: 0 !important;
+  }
+  .section-inner {
+    max-width: 1300px;
+    width: 100%;
+  }
   .layer {
     background: fade(black, 0%);
   }
@@ -42,14 +63,33 @@
     color: @content;
   }
 
-  #searchicon {
-    background: #eee;
-    border: solid 2px #ddd;
-    padding-top: 6px;
-    padding-bottom: 4px;
-  }
-  @media screen and (max-width: 768px) {
-    text-align: center;
+  #menu-search-wrapper {
+    padding: 25px 0;
+    text-align: right;
+    .top-search-icon {
+      display: inline-block;
+      font-size: 30px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      i {
+        color: white;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 3px;
+          height: 32px;
+          background-color: white;
+          margin-left: 13px
+        }
+      }
+    }
+    .side-menu {
+      display: inline-block;
+      .menu-link {
+        margin-left: 13px;
+        color: white;
+      }
+    }
   }
   #site-logo {
     display: inline-block;
@@ -62,4 +102,38 @@
       float: none;
     }
   }
+  .header-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 200px;
+    bottom: 0;
+    .header-text {
+      text-align: center;
+      clear: both;
+      .header_text_title {
+        display: block;
+        font-size: 55px;
+      }
+      .header_text_desc {
+        font-size: 25px;
+        width: 70%;
+        margin: auto;
+        display: block;
+        padding: 20px 10px;
+      }
+      .header-cta {
+        margin: 20px 10px;
+        font-size: 20px;
+        display: block;
+        a {
+          padding: 10px 20px;
+          border: 1px solid white;
+          border-radius: 5px;
+          background: fade(white, 20%);
+        }
+      }
+    }
+  }
+
 }

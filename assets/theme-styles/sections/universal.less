@@ -8,16 +8,33 @@
 
 body {
   .body-font;
-  background: #f7f7f7;
+  background: white;
   word-wrap: break-word;
   overflow: hidden;
 }
+
+.mega-wrapper {
+  background: #f8f8f8;
+}
+
 .mega-container {
-  background: white;
-  max-width: 1170px;
+  max-width: 1300px;
   margin: auto;
   margin-top: 20px;
+  padding: 50px 0;
   overflow: visible;
+  #primary {
+    .section-title {
+      text-align: center;
+      span {
+        background: none;
+      }
+    }
+  }
+}
+
+.section-inner {
+  max-width: 1300px;
 }
 a {
   color: @accent;
@@ -36,8 +53,8 @@ a {
   text-transform: uppercase;
   font-weight: bold;
   text-align: left;
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 36px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 3;
   .title-font;
@@ -72,3 +89,8 @@ a {
   bottom: 0;
   background: fade(black,60%);
 }
+
+.centered {
+  text-align:center;
+}
+

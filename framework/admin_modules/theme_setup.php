@@ -53,8 +53,6 @@ if ( ! function_exists( 'cleanpress_setup' ) ) :
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
             'primary' => __( 'Primary Menu', 'cleanpress' ),
-            'top' => __( 'Top Menu', 'cleanpress' ),
-            'mobile' => __( 'Mobile Menu', 'cleanpress' ),
         ) );
 
         /*
@@ -82,7 +80,7 @@ if ( ! function_exists( 'cleanpress_setup' ) ) :
         add_image_size('cleanpress-grid-thumb',250, 150, true );
         add_image_size('cleanpress-layout-thumb',350, 200, true );
         add_image_size('cleanpress-thumb',600, 600, true );
-        add_image_size('cleanpress-fp-thumb',380, 380, true );
+        add_image_size('cleanpress-fp-thumb',600, 300, true );
         add_image_size('cleanpress-slider-thumb',860, 430, true );
     }
 endif; // cleanpress_setup

@@ -132,59 +132,83 @@
   }
 }
 
-//Top Menu
-#top-navigation {
-  background: darken(@top-bar, 10%);
-  color: @content;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-  ul {
-    margin: 0;
-    li {
-      list-style-type: none;
-      display: inline-block;
-      padding: 4px 10px;
-      a {
-        color: @content;
-        font-size: 15px;
-      }
-      ul li {
-        display: none;
-      }
-    }
-  }
-}
 
 /* Mobile Menu */
 .menu-link {
   padding: 10px;
-  font-size: 32px;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
+  font-size: 30px;
 }
 #menu {
   z-index: 999;
   overflow-y: auto;
   background: darken(@top-bar, 5%);
-  border-right: 2px solid @accent;
-  @media screen and (min-width: 768px) {
-    display: none;
+  text-align: left;
+  padding: 0 30px;
+  font-size: 20px;
+  a.panel_hide_button {
+    display: block;
+    margin: 30px 15px;
+    color: white;
+    i {
+      font-size: 24px;
+    }
   }
   ul {
-    margin: 0;
+    margin-left: 0px;
+    padding: 0px;
     li {
       list-style: none;
-      padding: 5px 0px;
+      padding: 0px;
+      position: relative;
+      .body-font;
       a {
         display: block;
         color: @onaccent;
-        padding: 10px 15px;
+        padding: 20px;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      li {
+        a {
+          /*
+                          &:before {
+                              content: "\f068";
+                              font-family: "FontAwesome";
+                              margin-right: 20px;
+                              font-size: 15px;
+                          }
+          */
+        }
+      }
+    }
+    li.menu-item-has-children {
+      display: block;
+      span.dropdown-arrow {
+        position: absolute;
+        height: 56px;
+        width: 56px;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background: lighten(@top-bar, 15%);
+        cursor: pointer;
+        i {
+          margin: auto;
+          color: lighten(@top-bar, 35%);
+          font-weight: 700;
+          font-size: 20px;
+        }
       }
       ul {
-        background: @top-bar;
+        background: rgba(0,0,0,.1);
       }
+    }
+    .current-menu-item > a {
+      background: rgba(0,0,0,.05);
     }
   }
 }

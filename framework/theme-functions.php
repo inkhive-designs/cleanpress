@@ -63,6 +63,12 @@ class Cleanpress_Menu_With_Icon extends Walker_Nav_Menu {
 
 		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 
+        if ( $args->walker->has_children ) {
+            $dropDown = '<span class="dropdown-arrow"><i class="fa fa-angle-down"></i></span>';
+        } else {
+            $dropDown = '';
+        }
+
 		$fontIcon = ! empty( $item->attr_title ) ? ' <i class="fa ' . esc_attr( $item->attr_title ) .'">' : '';
 		$attributes = ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
 		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';

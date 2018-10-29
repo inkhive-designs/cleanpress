@@ -4,7 +4,7 @@
 */
 $count_x = $count = esc_html(rt_slider::fetch('count')); ?>
 
-<div class="container slider-container">
+<div class="container slider-container section-inner">
 	<div class="slider-wrapper theme-default">
             <div id="nivoSlider" class="nivoSlider">
             <?php
